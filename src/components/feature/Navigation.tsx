@@ -1,6 +1,5 @@
-
-import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -8,10 +7,10 @@ export default function Navigation() {
   const navigate = useNavigate();
 
   const navItems = [
-    { path: '/', label: '대시보드', icon: 'ri-dashboard-line' },
-    { path: '/records', label: '기록', icon: 'ri-calendar-line' },
-    { path: '/social', label: '소셜', icon: 'ri-team-line' },
-    { path: '/ranking', label: '랭킹', icon: 'ri-trophy-line' }
+    { path: "/", label: "대시보드", icon: "ri-dashboard-line" },
+    { path: "/records", label: "기록", icon: "ri-calendar-line" },
+    { path: "/social", label: "소셜", icon: "ri-team-line" },
+    { path: "/ranking", label: "랭킹", icon: "ri-trophy-line" },
   ];
 
   const handleNavigation = (path: string) => {
@@ -26,14 +25,17 @@ export default function Navigation() {
         <div className="w-full max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div 
+            <div
               className="flex items-center space-x-3 cursor-pointer"
-              onClick={() => handleNavigation('/')}
+              onClick={() => handleNavigation("/")}
             >
               <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
                 <i className="ri-swimming-line text-white text-xl"></i>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent" style={{ fontFamily: '"Pacifico", serif' }}>
+              <span
+                className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+                style={{ fontFamily: '"Pacifico", serif' }}
+              >
                 SwimSocial
               </span>
             </div>
@@ -46,8 +48,8 @@ export default function Navigation() {
                   onClick={() => handleNavigation(item.path)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
                     location.pathname === item.path
-                      ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                      ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg"
+                      : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                   }`}
                 >
                   <i className={`${item.icon} text-lg`}></i>
@@ -78,8 +80,8 @@ export default function Navigation() {
               onClick={() => handleNavigation(item.path)}
               className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-200 cursor-pointer ${
                 location.pathname === item.path
-                  ? 'text-blue-600'
-                  : 'text-gray-500 hover:text-blue-600'
+                  ? "text-blue-600"
+                  : "text-gray-500 hover:text-blue-600"
               }`}
             >
               <i className={`${item.icon} text-xl mb-1`}></i>
@@ -96,11 +98,14 @@ export default function Navigation() {
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
               <i className="ri-swimming-line text-white text-lg"></i>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent" style={{ fontFamily: '"Pacifico", serif' }}>
+            <span
+              className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"
+              style={{ fontFamily: '"Pacifico", serif' }}
+            >
               SwimSocial
             </span>
           </div>
-          
+
           <div className="flex items-center space-x-3">
             <button className="p-2 text-gray-600 hover:text-blue-600 rounded-lg transition-colors cursor-pointer">
               <i className="ri-notification-line text-lg"></i>
@@ -115,7 +120,7 @@ export default function Navigation() {
       {/* Spacer for fixed navigation */}
       <div className="hidden md:block h-20"></div>
       <div className="md:hidden h-16"></div>
-      <div className="md:hidden h-20"></div>
+      <div className="md:hidden h-2"></div>
     </>
   );
 }
