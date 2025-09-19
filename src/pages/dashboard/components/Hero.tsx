@@ -1,21 +1,12 @@
-import { useState } from "react";
-import Card from "../../../components/base/Card";
-import Button from "../../../components/base/Button";
+import Card from "@/components/base/Card";
+import Button from "@/components/base/Button";
+import { useDownload } from "@/hooks/useDownload";
 
 export default function Hero() {
-  const [showReportModal, setShowReportModal] = useState(false);
+  const { isDownloading, handleDownload } = useDownload();
 
-  const handleDownloadReport = () => {
-    setShowReportModal(true);
-    // 실제 리포트 다운로드 로직
-    setTimeout(() => {
-      setShowReportModal(false);
-      // PDF 다운로드 시뮬레이션
-      const link = document.createElement("a");
-      link.href = "#";
-      link.download = "swim-report-2024.pdf";
-      link.click();
-    }, 2000);
+  const handleReportDownload = () => {
+    handleDownload("swim-report-2024.pdf");
   };
 
   return (
@@ -49,7 +40,7 @@ export default function Hero() {
                 </Button>
 
                 <Button
-                  onClick={handleDownloadReport}
+                  onClick={handleReportDownload}
                   variant="secondary"
                   size="lg"
                   className="bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20"
@@ -64,7 +55,7 @@ export default function Hero() {
       </section>
 
       {/* Report Download Modal */}
-      {showReportModal && (
+      {isDownloading && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <Card className="max-w-sm w-full p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">

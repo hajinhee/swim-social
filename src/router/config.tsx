@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
+import { ROUTE_PATH } from "../constants/routes";
 
 const DashboardPage = lazy(() => import("../pages/dashboard/page"));
 const RecordsPage = lazy(() => import("../pages/records/page"));
@@ -9,23 +10,23 @@ const NotFoundPage = lazy(() => import("../pages/NotFound"));
 
 const routes: RouteObject[] = [
   {
-    path: "/",
+    path: ROUTE_PATH.DASHBOARD,
     element: <DashboardPage />,
   },
   {
-    path: "/records",
+    path: ROUTE_PATH.RECORDS,
     element: <RecordsPage />,
   },
   {
-    path: "/social",
+    path: ROUTE_PATH.SOCIAL,
     element: <SocialPage />,
   },
   {
-    path: "/ranking",
+    path: ROUTE_PATH.RANKING,
     element: <RankingPage />,
   },
   {
-    path: "*",
+    path: ROUTE_PATH.NOT_FOUND,
     element: <NotFoundPage />,
   },
 ];

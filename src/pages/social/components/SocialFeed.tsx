@@ -1,67 +1,11 @@
 import { useState } from "react";
-import Card from "../../../components/base/Card";
-import Button from "../../../components/base/Button";
+import Card from "@/components/base/Card";
+import Button from "@/components/base/Button";
+import { feedPosts } from "@/data/feedPosts";
 
 export default function SocialFeed() {
   const [likedPosts, setLikedPosts] = useState<number[]>([]);
   const [comments, setComments] = useState<{ [key: number]: string }>({});
-
-  const feedPosts = [
-    {
-      id: 1,
-      user: "박수영",
-      avatar: "박",
-      time: "2시간 전",
-      type: "swim",
-      content: "오늘 개인 최고 기록 달성! 🏊‍♀️",
-      swimData: {
-        stroke: "자유형",
-        distance: "3.2km",
-        time: "1시간 5분",
-        pace: "2분 2초/100m",
-      },
-      likes: 12,
-      hasComments: true,
-    },
-    {
-      id: 2,
-      user: "이영희",
-      avatar: "이",
-      time: "4시간 전",
-      type: "achievement",
-      content: "드디어 접영 1km 완주! 힘들었지만 뿌듯해요 💪",
-      achievement: "접영 마스터",
-      likes: 8,
-      hasComments: false,
-    },
-    {
-      id: 3,
-      user: "김철수",
-      avatar: "김",
-      time: "6시간 전",
-      type: "challenge",
-      content: "이번 주 목표 달성까지 2km 남았어요! 함께 화이팅! 🔥",
-      progress: 85,
-      likes: 15,
-      hasComments: true,
-    },
-    {
-      id: 4,
-      user: "정민수",
-      avatar: "정",
-      time: "8시간 전",
-      type: "swim",
-      content: "새벽 수영의 매력에 푹 빠졌어요",
-      swimData: {
-        stroke: "배영",
-        distance: "2.1km",
-        time: "48분",
-        pace: "2분 17초/100m",
-      },
-      likes: 6,
-      hasComments: false,
-    },
-  ];
 
   const handleLike = (postId: number) => {
     setLikedPosts((prev) =>

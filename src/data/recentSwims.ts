@@ -1,0 +1,55 @@
+import type { SwimRecord } from "@/types/components";
+
+export const recentSwims: SwimRecord[] = [
+  {
+    id: 1,
+    date: "2024.01.15",
+    time: "19:30",
+    distance: "2.5km",
+    duration: "45분",
+    calories: 420,
+    pace: "1분 48초/100m",
+    color: "from-blue-500 to-blue-600",
+    details: [
+      { stroke: "자유형", distance: "1.5km" },
+      { stroke: "배영", distance: "0.5km" },
+      { stroke: "접영", distance: "0.5km" },
+    ],
+  },
+  {
+    id: 2,
+    date: "2024.01.14",
+    time: "07:00",
+    distance: "1.2km",
+    duration: "35분",
+    calories: 380,
+    pace: "1분 55초/100m",
+    color: "from-purple-500 to-purple-600",
+    details: [
+      { stroke: "자유형", distance: "0.8km" },
+      { stroke: "평영", distance: "0.4km" },
+    ],
+  },
+  {
+    id: 3,
+    date: "2024.01.13",
+    time: "18:45",
+    distance: "1.8km",
+    duration: "40분",
+    calories: 320,
+    pace: "2분 13초/100m",
+    color: "from-cyan-500 to-cyan-600",
+    details: [{ stroke: "혼영(IM)", distance: "1.8km" }],
+  },
+  {
+    id: 4,
+    date: "2024.01.12",
+    time: "19:15",
+    distance: "1.5km",
+    duration: "42분",
+    calories: 290,
+    pace: "2분 48초/100m",
+    color: "from-green-500 to-green-600",
+    details: [{ stroke: "평영", distance: "1.5km" }],
+  },
+];

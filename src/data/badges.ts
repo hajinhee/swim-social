@@ -1,0 +1,68 @@
+import type { Badges } from "@/types/components";
+
+export const badges: Badges[] = [
+  {
+    id: 1,
+    name: "첫 수영",
+    description: "첫 번째 수영 기록 달성",
+    icon: "🏊‍♀️",
+    earned: true,
+    date: "2024.01.01",
+  },
+  {
+    id: 2,
+    name: "1km 달성",
+    description: "한 번에 1km 수영 완주",
+    icon: "🎯",
+    earned: true,
+    date: "2024.01.05",
+  },
+  {
+    id: 3,
+    name: "일주일 챌린지",
+    description: "일주일 연속 수영",
+    icon: "📅",
+    earned: true,
+    date: "2024.01.10",
+  },
+  {
+    id: 4,
+    name: "속도광",
+    description: "페이스 2분/100m 달성",
+    icon: "⚡",
+    earned: true,
+    date: "2024.01.12",
+  },
+  {
+    id: 5,
+    name: "4영법 마스터",
+    description: "모든 영법 1km씩 수영",
+    icon: "🏆",
+    earned: false,
+    progress: 75,
+  },
+  {
+    id: 6,
+    name: "월간 50km",
+    description: "한 달에 50km 수영",
+    icon: "🏅",
+    earned: false,
+    progress: 53,
+  },
+  {
+    id: 7,
+    name: "새벽 수영왕",
+    description: "새벽 6시 이전 수영 10회",
+    icon: "🌅",
+    earned: false,
+    progress: 30,
+  },
+  {
+    id: 8,
+    name: "소셜 스타",
+    description: "친구들로부터 축하 50개 받기",
+    icon: "⭐",
+    earned: false,
+    progress: 60,
+  },
+];

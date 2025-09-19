@@ -1,22 +1,19 @@
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { ROUTE_PATH } from "../../constants/routes";
 
 export default function Navigation() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navItems = [
-    { path: "/", label: "대시보드", icon: "ri-dashboard-line" },
-    { path: "/records", label: "기록", icon: "ri-calendar-line" },
-    { path: "/social", label: "소셜", icon: "ri-team-line" },
-    { path: "/ranking", label: "랭킹", icon: "ri-trophy-line" },
+    {
+      path: ROUTE_PATH.DASHBOARD,
+      label: "대시보드",
+      icon: "ri-dashboard-line",
+    },
+    { path: ROUTE_PATH.RECORDS, label: "기록", icon: "ri-calendar-line" },
+    { path: ROUTE_PATH.SOCIAL, label: "소셜", icon: "ri-team-line" },
+    { path: ROUTE_PATH.RANKING, label: "랭킹", icon: "ri-trophy-line" },
   ];
-
-  const handleNavigation = (path: string) => {
-    navigate(path);
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <>
@@ -25,10 +22,7 @@ export default function Navigation() {
         <div className="w-full max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div
-              className="flex items-center space-x-3 cursor-pointer"
-              onClick={() => handleNavigation("/")}
-            >
+            <Link to="/" className="flex items-center space-x-3 cursor-pointer">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
                 <i className="ri-swimming-line text-white text-xl"></i>
               </div>
@@ -38,14 +32,14 @@ export default function Navigation() {
               >
                 SwimSocial
               </span>
-            </div>
+            </Link>
 
             {/* Navigation Items */}
             <div className="flex items-center space-x-8">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.path}
-                  onClick={() => handleNavigation(item.path)}
+                  to={item.path}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 cursor-pointer whitespace-nowrap ${
                     location.pathname === item.path
                       ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg"
@@ -54,7 +48,7 @@ export default function Navigation() {
                 >
                   <i className={`${item.icon} text-lg`}></i>
                   <span>{item.label}</span>
-                </button>
+                </Link>
               ))}
             </div>
 
@@ -75,9 +69,9 @@ export default function Navigation() {
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-blue-100 shadow-lg">
         <div className="flex items-center justify-around py-2">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.path}
-              onClick={() => handleNavigation(item.path)}
+              to={item.path}
               className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-200 cursor-pointer ${
                 location.pathname === item.path
                   ? "text-blue-600"
@@ -86,8 +80,9 @@ export default function Navigation() {
             >
               <i className={`${item.icon} text-xl mb-1`}></i>
               <span className="text-xs font-medium">{item.label}</span>
-            </button>
+            </Link>
           ))}
+          to={}
         </div>
       </nav>
 

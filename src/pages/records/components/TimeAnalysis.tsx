@@ -1,50 +1,30 @@
-
-import Card from '../../../components/base/Card';
+import Card from "@/components/base/Card";
+import { timeSlots } from "@/data/timeSlots";
 
 export default function TimeAnalysis() {
-  const timeSlots = [
-    { 
-      period: '새벽', 
-      time: '05:00-09:00', 
-      count: 8, 
-      percentage: 20,
-      color: 'from-indigo-500 to-purple-500',
-      icon: 'ri-sun-line'
-    },
-    { 
-      period: '점심', 
-      time: '12:00-14:00', 
-      count: 12, 
-      percentage: 30,
-      color: 'from-yellow-500 to-orange-500',
-      icon: 'ri-sun-fill'
-    },
-    { 
-      period: '저녁', 
-      time: '18:00-20:00', 
-      count: 20, 
-      percentage: 50,
-      color: 'from-blue-500 to-cyan-500',
-      icon: 'ri-moon-line'
-    }
-  ];
-
-  const favoriteTime = timeSlots.find(slot => slot.percentage === Math.max(...timeSlots.map(s => s.percentage)));
+  const favoriteTime = timeSlots.find(
+    (slot) =>
+      slot.percentage === Math.max(...timeSlots.map((s) => s.percentage))
+  );
 
   return (
     <Card className="p-4 md:p-6">
       <h3 className="text-xl font-bold text-gray-900 mb-6">시간대별 분석</h3>
-      
+
       {/* 선호 시간대 하이라이트 */}
       {favoriteTime && (
         <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100">
           <div className="flex items-center space-x-3 mb-2">
-            <div className={`w-10 h-10 bg-gradient-to-r ${favoriteTime.color} rounded-lg flex items-center justify-center`}>
+            <div
+              className={`w-10 h-10 bg-gradient-to-r ${favoriteTime.color} rounded-lg flex items-center justify-center`}
+            >
               <i className={`${favoriteTime.icon} text-white text-lg`}></i>
             </div>
             <div>
               <h4 className="font-bold text-gray-900">가장 선호하는 시간대</h4>
-              <p className="text-sm text-gray-600">{favoriteTime.period} {favoriteTime.time}</p>
+              <p className="text-sm text-gray-600">
+                {favoriteTime.period} {favoriteTime.time}
+              </p>
             </div>
           </div>
         </div>
@@ -56,7 +36,9 @@ export default function TimeAnalysis() {
           <div key={index}>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-3">
-                <div className={`w-10 h-10 bg-gradient-to-r ${slot.color} rounded-lg flex items-center justify-center`}>
+                <div
+                  className={`w-10 h-10 bg-gradient-to-r ${slot.color} rounded-lg flex items-center justify-center`}
+                >
                   <i className={`${slot.icon} text-white text-lg`}></i>
                 </div>
                 <div>
@@ -65,14 +47,16 @@ export default function TimeAnalysis() {
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-lg font-bold text-gray-900">{slot.count}회</p>
+                <p className="text-lg font-bold text-gray-900">
+                  {slot.count}회
+                </p>
                 <p className="text-sm text-gray-600">{slot.percentage}%</p>
               </div>
             </div>
-            
+
             {/* 진행률 바 */}
             <div className="w-full bg-gray-200 rounded-full h-3">
-              <div 
+              <div
                 className={`h-3 rounded-full bg-gradient-to-r ${slot.color} transition-all duration-1000 ease-out`}
                 style={{ width: `${slot.percentage}%` }}
               ></div>

@@ -1,46 +1,8 @@
-import Card from "../../../components/base/Card";
+import Card from "@/components/base/Card";
+import { stroke } from "@/data/stroke";
 
 export default function StrokeAnalysis() {
-  const strokeData = [
-    {
-      name: "자유형",
-      percentage: 45,
-      distance: "64.1km",
-      sessions: 28,
-      avgTime: "42분",
-      color: "from-blue-500 to-blue-600",
-      icon: "ri-swimming-line",
-    },
-    {
-      name: "배영",
-      percentage: 25,
-      distance: "35.6km",
-      sessions: 15,
-      avgTime: "38분",
-      color: "from-cyan-500 to-cyan-600",
-      icon: "ri-user-line",
-    },
-    {
-      name: "평영",
-      percentage: 20,
-      distance: "28.5km",
-      sessions: 12,
-      avgTime: "45분",
-      color: "from-green-500 to-green-600",
-      icon: "ri-heart-pulse-line",
-    },
-    {
-      name: "접영",
-      percentage: 10,
-      distance: "14.3km",
-      sessions: 6,
-      avgTime: "35분",
-      color: "from-purple-500 to-purple-600",
-      icon: "ri-bug-line",
-    },
-  ];
-
-  const favoriteStroke = strokeData[0];
+  const favoriteStroke = stroke[0];
 
   return (
     <Card className="p-4 md:p-6">
@@ -65,7 +27,7 @@ export default function StrokeAnalysis() {
 
       {/* 영법별 상세 통계 */}
       <div className="space-y-4">
-        {strokeData.map((stroke, index) => (
+        {stroke.map((stroke, index) => (
           <div key={index} className="relative">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-3">
@@ -114,7 +76,7 @@ export default function StrokeAnalysis() {
           영법별 컬러 가이드
         </h4>
         <div className="grid grid-cols-2 gap-3 text-sm">
-          {strokeData.map((stroke, index) => (
+          {stroke.map((stroke, index) => (
             <div key={index} className="flex items-center space-x-2">
               <div
                 className={`w-3 h-3 bg-gradient-to-r ${stroke.color} rounded-full`}

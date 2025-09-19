@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Card from "../../../components/base/Card";
+import Card from "@/components/base/Card";
 
 export default function CalendarView() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -10,11 +10,6 @@ export default function CalendarView() {
     currentDate.getMonth(),
     1
   );
-  // const lastDay = new Date(
-  //   currentDate.getFullYear(),
-  //   currentDate.getMonth() + 1,
-  //   0
-  // );
   const startDate = new Date(firstDay);
   startDate.setDate(startDate.getDate() - firstDay.getDay());
 

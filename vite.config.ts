@@ -1,12 +1,18 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import path from "path";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/", // 깃허브 저장소 이름으로 변경
+  base: "/swim-social/",
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   define: {
-    __BASE_PATH__: JSON.stringify("/"),
+    __BASE_PATH__: JSON.stringify("/swim-social/"),
   },
 });

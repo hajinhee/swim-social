@@ -1,22 +1,8 @@
-import Button from "../../../components/base/Button";
-import Card from "../../../components/base/Card";
+import Button from "@/components/base/Button";
+import Card from "@/components/base/Card";
+import { mvp, topPerformers } from "@/data/weeklyMVP";
 
 export default function WeeklyMVP() {
-  const mvp = {
-    name: "박수영",
-    avatar: "박",
-    achievement: "이번 주 최고 거리",
-    distance: "18.5km",
-    improvement: "+25%",
-    badge: "주간 챔피언",
-  };
-
-  const topPerformers = [
-    { name: "박수영", avatar: "박", distance: "18.5km", rank: 1 },
-    { name: "김철수", avatar: "김", distance: "16.2km", rank: 2 },
-    { name: "이영희", avatar: "이", distance: "14.8km", rank: 3 },
-  ];
-
   return (
     <Card className="p-4 md:p-6">
       <h3 className="text-lg font-bold text-gray-900 mb-6 ">이번 주 MVP 🏆</h3>

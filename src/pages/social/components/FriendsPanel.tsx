@@ -1,36 +1,11 @@
 import { useState } from "react";
-import Card from "../../../components/base/Card";
-import Button from "../../../components/base/Button";
+import Card from "@/components/base/Card";
+import Button from "@/components/base/Button";
+import { friends } from "@/data/friends";
 
 export default function FriendsPanel() {
   const [nudgedFriends, setNudgedFriends] = useState<number[]>([]);
   const [praisedFriends, setPraisedFriends] = useState<number[]>([]);
-
-  const friends = [
-    {
-      id: 1,
-      name: "박수영",
-      avatar: "박",
-      status: "online",
-      lastSwim: "2시간 전",
-    },
-    {
-      id: 2,
-      name: "이영희",
-      avatar: "이",
-      status: "online",
-      lastSwim: "4시간 전",
-    },
-    { id: 3, name: "김철수", avatar: "김", status: "away", lastSwim: "1일 전" },
-    {
-      id: 4,
-      name: "정민수",
-      avatar: "정",
-      status: "offline",
-      lastSwim: "2일 전",
-    },
-    { id: 5, name: "최지훈", avatar: "최", status: "away", lastSwim: "3일 전" },
-  ];
 
   const handleNudge = (friendId: number) => {
     setNudgedFriends((prev) => [...prev, friendId]);
@@ -45,36 +20,7 @@ export default function FriendsPanel() {
     setPraisedFriends((prev) => [...prev, friendId]);
     // 칭찬하기 알림 전송 로직
     alert("칭찬 메시지를 보냈습니다! 🎉");
-    // setTimeout(() => {
-    //   setPraisedFriends((prev) => prev.filter((id) => id !== friendId));
-    // }, 3000);
   };
-
-  // const getStatusColor = (status: string) => {
-  //   switch (status) {
-  //     case "online":
-  //       return "bg-green-400";
-  //     case "away":
-  //       return "bg-yellow-400";
-  //     case "offline":
-  //       return "bg-gray-400";
-  //     default:
-  //       return "bg-gray-400";
-  //   }
-  // };
-
-  // const getStatusText = (status: string) => {
-  //   switch (status) {
-  //     case "online":
-  //       return "온라인";
-  //     case "away":
-  //       return "자리비움";
-  //     case "offline":
-  //       return "오프라인";
-  //     default:
-  //       return "알 수 없음";
-  //   }
-  // };
 
   return (
     <Card className="p-4 md:p-6">
@@ -96,16 +42,10 @@ export default function FriendsPanel() {
                     {friend.avatar}
                   </span>
                 </div>
-                {/* <div
-                  className={`absolute -bottom-1 -right-1 w-3 h-3 ${getStatusColor(
-                    friend.status
-                  )} rounded-full border-2 border-white`}
-                ></div> */}
               </div>
               <div>
                 <h4 className="font-medium text-gray-900">{friend.name}</h4>
                 <p className="text-xs text-gray-500">
-                  {/* {getStatusText(friend.status)} •  */}
                   마지막 수영: {friend.lastSwim}
                 </p>
               </div>
