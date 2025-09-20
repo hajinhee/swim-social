@@ -1,4 +1,11 @@
-import type { CardProps } from "../../types/components";
+import type { ReactNode } from "react";
+
+interface CardProps {
+  children: ReactNode;
+  className?: string;
+  hover?: boolean;
+  onClick?: () => void;
+}
 
 export default function Card({
   children,

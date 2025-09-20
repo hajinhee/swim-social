@@ -1,11 +1,11 @@
-import type { StatsPeriod } from "@/types/components";
+import type { StatsPeriod } from "@/types/records";
 
 export const weeklyStats: StatsPeriod[] = [
   {
     label: "이번 주 수영",
     value: "12.5km",
     change: "+15%",
-    icon: "ri-swimming-line",
+    icon: "ri-ruler-line",
     color: "from-blue-500 to-blue-600",
   },
   {

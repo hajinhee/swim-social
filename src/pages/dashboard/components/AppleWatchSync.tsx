@@ -8,17 +8,19 @@ export default function AppleWatchSync() {
 
   return (
     <section className="mb-8">
-      <Card className="p-4 md:p-6">
+      <Card className="p-4 md:p-6 md:hidden">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
-              <i className="ri-apple-line text-white text-xl"></i>
+          <div className="flex items-center space-x-4 ">
+            <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center space-x-1 dark:bg-gray-700">
+              <i className="ri-apple-fill text-white text-base"></i>
+              <i className="ri-android-fill text-white text-base"></i>
             </div>
+
             <div>
-              <h3 className="text-lg font-bold text-gray-900">
-                Apple Watch 연동
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                스마트워치 연동
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
                 {isConnected ? (
                   <>마지막 동기화: {lastSync}</>
                 ) : (

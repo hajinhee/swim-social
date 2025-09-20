@@ -1,13 +1,17 @@
-import type { ButtonProps } from "../../types/components";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+}
 
 export default function Button({
   children,
-  onClick,
   variant = "primary",
   size = "md",
   className = "",
-  disabled = false,
-  type = "button",
+  ...props
 }: ButtonProps) {
   const baseClasses =
     "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 cursor-pointer whitespace-nowrap";
@@ -27,13 +31,11 @@ export default function Button({
     lg: "px-6 py-3 text-lg",
   };
 
-  const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
+  const disabledClasses = props.disabled ? "opacity-50 cursor-not-allowed" : "";
 
   return (
     <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
+      {...props}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${disabledClasses} ${className}`}
     >
       {children}

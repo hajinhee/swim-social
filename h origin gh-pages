@@ -1,0 +1,23 @@
+[33mcommit 81c35f38793ffb153cdee08758c812adc3030506[m[33m ([m[1;36mHEAD -> [m[1;32mgh-pages[m[33m)[m
+Author: hajinhee <hajinheee@gmail.com>
+Date:   Fri Sep 19 18:06:14 2025 +0900
+
+    라우터 변경
+
+[33mcommit 8869798ece0858f381a7b7b8bdb9c577ba5c95af[m
+Author: hajinhee <hajinheee@gmail.com>
+Date:   Fri Sep 19 17:43:19 2025 +0900
+
+    절대 경로 설정 및 인터페이스 분리
+
+[33mcommit e287e5454802e8fb8c62734878db065b81fa3a50[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: hajinhee <hajinheee@gmail.com>
+Date:   Wed Sep 17 17:32:36 2025 +0900
+
+    모바일 css 수정
+
+[33mcommit eba4e13ece2dc5611d0d030281485a81c96beba2[m
+Author: hajinhee <hajinheee@gmail.com>
+Date:   Tue Sep 16 23:14:16 2025 +0900
+
+    Initial commit

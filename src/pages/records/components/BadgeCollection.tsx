@@ -1,4 +1,3 @@
-import Card from "@/components/base/Card";
 import { badges } from "@/data/badges";
 
 export default function BadgeCollection() {
@@ -6,10 +5,7 @@ export default function BadgeCollection() {
   const upcomingBadges = badges.filter((badge) => !badge.earned);
 
   return (
-    <Card className="p-4 md:p-6">
-      <h3 className="text-lg font-bold text-gray-900 mb-6">뱃지 컬렉션</h3>
-
-      {/* 획득한 뱃지 */}
+    <>
       <div className="mb-6">
         <h4 className="font-medium text-gray-900 mb-3">
           획득한 뱃지 ({earnedBadges.length}/{badges.length})
@@ -70,6 +66,6 @@ export default function BadgeCollection() {
           수영 마스터가 되어보세요! 🏊‍♀️
         </p>
       </div>
-    </Card>
+    </>
   );
 }

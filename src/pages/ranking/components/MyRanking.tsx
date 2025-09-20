@@ -21,7 +21,7 @@ export default function MyRanking() {
 
         {/* 현재 순위 */}
         <div className="text-center mb-6 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
+          <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-3">
             <span className="text-white font-bold text-xl">김</span>
           </div>
           <h4 className="font-bold text-gray-900 text-lg">김수영</h4>
@@ -71,6 +71,7 @@ export default function MyRanking() {
             <span className="text-sm font-medium text-gray-900">
               월간 목표 달성률
             </span>
+
             <span className="text-sm font-bold text-blue-600">
               {myStats.goal.percentage}%
             </span>

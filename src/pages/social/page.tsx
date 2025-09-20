@@ -1,7 +1,7 @@
 import Navigation from "../../components/feature/Navigation";
 import SocialFeed from "./components/SocialFeed";
 import FriendsPanel from "./components/FriendsPanel";
-import WeeklyMVP from "./components/WeeklyMVP";
+import { PostCreator } from "./components/PostCreator";
 
 export default function SocialPage() {
   return (
@@ -19,10 +19,11 @@ export default function SocialPage() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
+              <PostCreator />
               <SocialFeed />
             </div>
             <div className="space-y-6">
-              <WeeklyMVP />
+              {/* <WeeklyMVP /> */}
               <FriendsPanel />
             </div>
           </div>

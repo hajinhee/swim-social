@@ -1,4 +1,4 @@
-import type { Ranking } from "@/types/components";
+import type { Ranking } from "@/types/records";
 
 export const weeklyRankings: Ranking[] = [
   {

@@ -1,4 +1,4 @@
-import type { MyStats } from "@/types/components";
+import type { MyStats } from "@/types/records";
 
 export const myStats: MyStats = {
   weekly: {

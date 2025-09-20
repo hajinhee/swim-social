@@ -1,4 +1,4 @@
-import type { SwimRecord } from "@/types/components";
+import type { SwimRecord } from "@/types/records";
 
 export const recentSwims: SwimRecord[] = [
   {

@@ -57,7 +57,7 @@ export default function Navigation() {
               <button className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-colors cursor-pointer">
                 <i className="ri-notification-line text-xl"></i>
               </button>
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center cursor-pointer">
+              <div className="w-10 h-10 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full flex items-center justify-center cursor-pointer">
                 <span className="text-white font-bold text-sm">김</span>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function Navigation() {
             <button className="p-2 text-gray-600 hover:text-blue-600 rounded-lg transition-colors cursor-pointer">
               <i className="ri-notification-line text-lg"></i>
             </button>
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center cursor-pointer">
+            <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full flex items-center justify-center cursor-pointer">
               <span className="text-white font-bold text-xs">김</span>
             </div>
           </div>

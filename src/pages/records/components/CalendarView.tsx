@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Card from "@/components/base/Card";
+import BadgeCollection from "@/pages/records/components/BadgeCollection";
+import MonthlySummary from "./MonthlySummary";
 
 export default function CalendarView() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [showMonthlySummary, setShowMonthlySummary] = useState(true); // 초기값은 '이달의 통계'
 
   // 현재 월의 첫 번째 날과 마지막 날
   const firstDay = new Date(
@@ -48,13 +51,6 @@ export default function CalendarView() {
     const newDate = new Date(currentDate);
     newDate.setMonth(newDate.getMonth() + direction);
     setCurrentDate(newDate);
-  };
-
-  const monthStats = {
-    totalSwims: 15,
-    totalDistance: "42.5km",
-    totalTime: "18시간 45분",
-    avgPace: "2분 12초/100m",
   };
 
   return (
@@ -161,7 +157,6 @@ export default function CalendarView() {
                 );
               })}
             </div>
-
             <div className="mt-6 flex flex-wrap gap-4 text-sm">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
                 <div className="flex items-center space-x-2">
@@ -177,56 +172,43 @@ export default function CalendarView() {
           </Card>
         </div>
 
-        {/* 이달 통계 */}
+        {/* 이달 통계, 뱃지 컬렉션 */}
         <div>
           <Card className="p-4 md:p-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">이달 통계</h3>
-
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-gray-600">총 수영 횟수</span>
-                <span className="font-bold text-gray-900">
-                  {monthStats.totalSwims}회
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-600">총 거리</span>
-                <span className="font-bold text-gray-900">
-                  {monthStats.totalDistance}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-600">총 시간</span>
-                <span className="font-bold text-gray-900">
-                  {monthStats.totalTime}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-600">평균 페이스</span>
-                <span className="font-bold text-gray-900">
-                  {monthStats.avgPace}
-                </span>
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold text-gray-900">
+                {showMonthlySummary ? "이달의 통계" : "뱃지 컬렉션"}
+              </h3>
+              <div className="flex bg-gray-100 rounded-lg p-1">
+                <button
+                  onClick={() => setShowMonthlySummary(true)}
+                  className={`
+              px-3 py-1 rounded-md font-medium text-sm transition-all cursor-pointer
+              ${
+                showMonthlySummary
+                  ? "bg-white text-blue-600 shadow-sm"
+                  : "text-gray-400 hover:text-gray-900"
+              }
+            `}
+                >
+                  통계
+                </button>
+                <button
+                  onClick={() => setShowMonthlySummary(false)}
+                  className={`
+              px-3 py-1 rounded-md font-medium text-sm transition-all cursor-pointer
+              ${
+                !showMonthlySummary
+                  ? "bg-white text-blue-600 shadow-sm"
+                  : "text-gray-400 hover:text-gray-900 "
+              }
+            `}
+                >
+                  뱃지
+                </button>
               </div>
             </div>
-
-            {/* 월간 목표 */}
-            <div className="mt-6 pt-4 border-t border-gray-100">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-900">
-                  월간 목표
-                </span>
-                <span className="text-sm text-blue-600 font-medium">75%</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
-                  style={{ width: "75%" }}
-                ></div>
-              </div>
-              <p className="text-xs text-gray-600 mt-2">
-                목표: 50km (현재: 42.5km)
-              </p>
-            </div>
+            {showMonthlySummary ? <MonthlySummary /> : <BadgeCollection />}
           </Card>
         </div>
       </div>

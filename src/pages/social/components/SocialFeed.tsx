@@ -166,36 +166,34 @@ export default function SocialFeed() {
           </div>
 
           {/* 댓글 입력 */}
-          {post.hasComments && (
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">김</span>
-                </div>
-                <div className="flex-1 flex items-center space-x-2">
-                  <input
-                    type="text"
-                    placeholder="댓글을 입력하세요..."
-                    value={comments[post.id] || ""}
-                    onChange={(e) =>
-                      setComments((prev) => ({
-                        ...prev,
-                        [post.id]: e.target.value,
-                      }))
-                    }
-                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 text-sm"
-                  />
-                  <Button
-                    size="sm"
-                    onClick={() => handleComment(post.id)}
-                    disabled={!comments[post.id]?.trim()}
-                  >
-                    전송
-                  </Button>
-                </div>
+          <div className="mt-4 pt-4 border-t border-gray-100">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">김</span>
+              </div>
+              <div className="flex-1 flex items-center space-x-2">
+                <input
+                  type="text"
+                  placeholder="댓글을 입력하세요..."
+                  value={comments[post.id] || ""}
+                  onChange={(e) =>
+                    setComments((prev) => ({
+                      ...prev,
+                      [post.id]: e.target.value,
+                    }))
+                  }
+                  className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 text-sm"
+                />
+                <Button
+                  size="sm"
+                  onClick={() => handleComment(post.id)}
+                  disabled={!comments[post.id]?.trim()}
+                >
+                  <i className="ri-arrow-up-line"></i>
+                </Button>
               </div>
             </div>
-          )}
+          </div>
         </Card>
       ))}
     </div>

@@ -1,4 +1,4 @@
-import type { FeedPosts } from "@/types/components";
+import type { FeedPosts } from "@/types/social";
 
 export const feedPosts: FeedPosts[] = [
   {
@@ -19,6 +19,16 @@ export const feedPosts: FeedPosts[] = [
   },
   {
     id: 2,
+    user: "하진희",
+    avatar: "하",
+    time: "4시간 전",
+    type: "text",
+    content: "수영가기 힘들어요~",
+    likes: 8,
+    hasComments: false,
+  },
+  {
+    id: 3,
     user: "이영희",
     avatar: "이",
     time: "4시간 전",
@@ -29,7 +39,7 @@ export const feedPosts: FeedPosts[] = [
     hasComments: false,
   },
   {
-    id: 3,
+    id: 4,
     user: "김철수",
     avatar: "김",
     time: "6시간 전",
@@ -40,7 +50,7 @@ export const feedPosts: FeedPosts[] = [
     hasComments: true,
   },
   {
-    id: 4,
+    id: 5,
     user: "정민수",
     avatar: "정",
     time: "8시간 전",

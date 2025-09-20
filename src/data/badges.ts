@@ -1,4 +1,4 @@
-import type { Badges } from "@/types/components";
+import type { Badges } from "@/types/records";
 
 export const badges: Badges[] = [
   {
