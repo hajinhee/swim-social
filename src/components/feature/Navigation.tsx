@@ -24,7 +24,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 cursor-pointer">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                <i className="ri-swimming-line text-white text-xl"></i>
+                🏊
               </div>
               <span
                 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent"

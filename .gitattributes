@@ -1,1 +1,6 @@
+# 외부 라이브러리 및 자동으로 생성된 CSS 파일을 언어 통계에서 제외
+# Remixicon CSS 파일 제외
 assets/fonts/remixicon.css linguist-vendored
+
+# Tailwind CSS와 같이 빌드 과정에서 생성되는 CSS 파일 제외
+src/assets/styles/main.css linguist-vendored

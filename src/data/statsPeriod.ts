@@ -36,7 +36,7 @@ export const monthlyStats: StatsPeriod[] = [
     label: "총 거리",
     value: "142.5km",
     change: "+12%",
-    icon: "ri-swimming-line",
+    icon: "ri-ruler-line",
   },
   { label: "총 시간", value: "67시간", change: "+8%", icon: "ri-time-line" },
   {

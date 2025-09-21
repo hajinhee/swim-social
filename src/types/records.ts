@@ -69,7 +69,6 @@ export interface Stroke {
   sessions: number;
   avgTime: string;
   color: string;
-  icon: string;
 }
 
 export interface TimeSlots {

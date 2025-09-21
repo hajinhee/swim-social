@@ -1,4 +1,4 @@
-import type { Stroke } from "@/types/components";
+import type { Stroke } from "@/types/records";
 
 export const stroke: Stroke[] = [
   {
@@ -8,7 +8,6 @@ export const stroke: Stroke[] = [
     sessions: 28,
     avgTime: "42분",
     color: "from-blue-500 to-blue-600",
-    icon: "ri-swimming-line",
   },
   {
     name: "배영",
@@ -17,7 +16,6 @@ export const stroke: Stroke[] = [
     sessions: 15,
     avgTime: "38분",
     color: "from-cyan-500 to-cyan-600",
-    icon: "ri-user-line",
   },
   {
     name: "평영",
@@ -26,7 +24,6 @@ export const stroke: Stroke[] = [
     sessions: 12,
     avgTime: "45분",
     color: "from-green-500 to-green-600",
-    icon: "ri-heart-pulse-line",
   },
   {
     name: "접영",
@@ -35,6 +32,5 @@ export const stroke: Stroke[] = [
     sessions: 6,
     avgTime: "35분",
     color: "from-purple-500 to-purple-600",
-    icon: "ri-bug-line",
   },
 ];
