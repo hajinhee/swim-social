@@ -24,7 +24,7 @@ export const weeklyStats: StatsPeriod[] = [
   },
   {
     label: "수영 횟수",
-    value: "15회",
+    value: "14회",
     change: "+5%",
     icon: "ri-medal-line",
     color: "from-purple-500 to-pink-500",

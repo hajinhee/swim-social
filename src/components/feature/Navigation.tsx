@@ -6,7 +6,7 @@ export default function Navigation() {
 
   const navItems = [
     {
-      path: ROUTE_PATH.DASHBOARD,
+      path: ROUTE_PATH.HOME,
       label: "대시보드",
       icon: "ri-dashboard-line",
     },

@@ -3,7 +3,7 @@ import type { SwimRecord } from "@/types/records";
 export const recentSwims: SwimRecord[] = [
   {
     id: 1,
-    date: "2024.01.15",
+    date: "2025.01.15",
     time: "19:30",
     distance: "2.5km",
     duration: "45분",
@@ -18,7 +18,7 @@ export const recentSwims: SwimRecord[] = [
   },
   {
     id: 2,
-    date: "2024.01.14",
+    date: "2025.01.14",
     time: "07:00",
     distance: "1.2km",
     duration: "35분",
@@ -32,7 +32,7 @@ export const recentSwims: SwimRecord[] = [
   },
   {
     id: 3,
-    date: "2024.01.13",
+    date: "2025.01.13",
     time: "18:45",
     distance: "1.8km",
     duration: "40분",
@@ -43,7 +43,7 @@ export const recentSwims: SwimRecord[] = [
   },
   {
     id: 4,
-    date: "2024.01.12",
+    date: "2025.01.12",
     time: "19:15",
     distance: "1.5km",
     duration: "42분",

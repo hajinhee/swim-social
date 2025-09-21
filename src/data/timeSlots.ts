@@ -1,4 +1,4 @@
-import type { TimeSlots } from "@/types/components";
+import type { TimeSlots } from "@/types/records";
 
 export const timeSlots: TimeSlots[] = [
   {

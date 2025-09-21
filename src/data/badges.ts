@@ -7,7 +7,7 @@ export const badges: Badges[] = [
     description: "첫 번째 수영 기록 달성",
     icon: "🏊‍♀️",
     earned: true,
-    date: "2024.01.01",
+    date: "2025.01.01",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const badges: Badges[] = [
     description: "한 번에 1km 수영 완주",
     icon: "🎯",
     earned: true,
-    date: "2024.01.05",
+    date: "2025.01.05",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const badges: Badges[] = [
     description: "일주일 연속 수영",
     icon: "📅",
     earned: true,
-    date: "2024.01.10",
+    date: "2025.01.10",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const badges: Badges[] = [
     description: "페이스 2분/100m 달성",
     icon: "⚡",
     earned: true,
-    date: "2024.01.12",
+    date: "2025.01.12",
   },
   {
     id: 5,

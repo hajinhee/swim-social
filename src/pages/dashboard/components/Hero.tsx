@@ -6,7 +6,7 @@ export default function Hero() {
   const { isDownloading, handleDownload } = useDownload();
 
   const handleReportDownload = () => {
-    handleDownload("swim-report-2024.pdf");
+    handleDownload("swim-report-2025.pdf");
   };
 
   return (

@@ -27,12 +27,12 @@ export default function CalendarView() {
   // 수영 기록이 있는 날짜들 (더미 데이터)
 
   // 영법별 색상
-  const strokeColors = {
-    freestyle: "bg-blue-400",
-    backstroke: "bg-cyan-400",
-    breaststroke: "bg-green-400",
-    butterfly: "bg-purple-400",
-  };
+  // const strokeColors = {
+  //   freestyle: "bg-blue-400",
+  //   backstroke: "bg-cyan-400",
+  //   breaststroke: "bg-green-400",
+  //   butterfly: "bg-purple-400",
+  // };
 
   const today = new Date();
   const isToday = (date: Date) => {
@@ -100,21 +100,20 @@ export default function CalendarView() {
               {calendarDays.map((date, index) => {
                 const dateKey = getDateKey(date);
                 const hasSwim = {
-                  "2024-01-01": ["freestyle"],
-                  "2024-01-03": ["backstroke", "freestyle"],
-                  "2024-01-05": ["breaststroke"],
-                  "2024-01-08": ["butterfly"],
-                  "2024-01-10": ["freestyle", "backstroke"],
-                  "2024-01-12": ["breaststroke", "freestyle"],
-                  "2024-01-14": ["butterfly"],
-                  "2024-01-15": ["freestyle"],
-                  "2024-01-17": ["backstroke"],
-                  "2024-01-19": ["freestyle", "breaststroke"],
-                  "2024-01-22": ["butterfly", "freestyle"],
-                  "2024-01-24": ["backstroke"],
-                  "2024-01-26": ["freestyle"],
-                  "2024-01-28": ["breaststroke"],
-                  "2024-01-30": ["freestyle", "butterfly"],
+                  "2025-09-01": ["freestyle"],
+                  "2025-09-03": ["backstroke", "freestyle"],
+                  "2025-09-05": ["breaststroke"],
+                  "2025-09-08": ["butterfly"],
+                  "2025-09-10": ["freestyle", "backstroke"],
+                  "2025-09-12": ["breaststroke", "freestyle"],
+                  "2025-09-14": ["butterfly"],
+                  "2025-09-15": ["freestyle"],
+                  "2025-09-17": ["backstroke"],
+                  "2025-09-19": ["freestyle", "breaststroke"],
+                  "2025-09-22": ["butterfly", "freestyle"],
+                  "2025-09-24": ["backstroke"],
+                  "2025-09-26": ["freestyle"],
+                  "2025-09-28": ["breaststroke"],
                 }[dateKey];
                 const isTodayDate = isToday(date);
                 const isCurrentMonthDate = isCurrentMonth(date);
@@ -122,15 +121,18 @@ export default function CalendarView() {
                 return (
                   <div
                     key={index}
-                    className={`relative p-2 h-16 border border-gray-100 rounded-lg transition-all cursor-pointer ${
-                      isTodayDate
-                        ? "bg-blue-500 text-white"
-                        : hasSwim
-                        ? "bg-blue-50 hover:bg-blue-100"
-                        : "hover:bg-gray-50"
-                    } ${
-                      !isCurrentMonthDate ? "text-gray-300" : "text-gray-900"
-                    }`}
+                    className={`relative p-2 h-16 border border-gray-100 rounded-lg transition-all 
+    ${
+      !isCurrentMonthDate
+        ? "text-gray-300 cursor-default"
+        : isTodayDate
+        ? "bg-blue-500 text-white cursor-pointer"
+        : hasSwim
+        ? "bg-blue-50 hover:bg-blue-100 cursor-pointer"
+        : "hover:bg-gray-50"
+    } 
+    ${!isCurrentMonthDate ? "" : "text-gray-900 cursor-pointer"}
+  `}
                   >
                     <span
                       className={`text-sm font-medium ${
@@ -141,7 +143,7 @@ export default function CalendarView() {
                     </span>
 
                     {/* 영법 점들 */}
-                    {hasSwim && (
+                    {/* {hasSwim && (
                       <div className="absolute bottom-1 left-1 right-1 flex justify-center space-x-1">
                         {hasSwim.map((stroke, i) => (
                           <div
@@ -152,7 +154,7 @@ export default function CalendarView() {
                           ></div>
                         ))}
                       </div>
-                    )}
+                    )} */}
                   </div>
                 );
               })}

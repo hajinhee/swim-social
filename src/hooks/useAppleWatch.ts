@@ -3,7 +3,7 @@ import { useState } from "react";
 export const useAppleWatch = () => {
   const [isConnected, setIsConnected] = useState(false);
   const [isSyncing, setIsSyncing] = useState(false);
-  const [lastSync, setLastSync] = useState("2024.01.15 20:30");
+  const [lastSync, setLastSync] = useState("2025.01.15 20:30");
 
   const handleSync = async () => {
     setIsSyncing(true);

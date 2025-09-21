@@ -187,7 +187,7 @@ export const PostCreator = () => {
             onChange={(e) => setNewPostContent(e.target.value)}
           ></textarea>
           <div className="flex justify-between">
-            <div className="flex items-center justify-end space-x-2 ">
+            <div className="flex items-center justify-end space-x-1 ">
               <button
                 onClick={() => setPostType("text")}
                 className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-200 ${

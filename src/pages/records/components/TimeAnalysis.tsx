@@ -72,12 +72,12 @@ export default function TimeAnalysis() {
           <div className="p-3 bg-green-50 rounded-xl">
             <p className="text-sm text-gray-600">최고 기록</p>
             <p className="text-lg font-bold text-green-600">3.2km</p>
-            <p className="text-xs text-gray-500">2024.01.15</p>
+            <p className="text-xs text-gray-500">2025.01.15</p>
           </div>
           <div className="p-3 bg-blue-50 rounded-xl">
             <p className="text-sm text-gray-600">최장 시간</p>
             <p className="text-lg font-bold text-blue-600">1시간 15분</p>
-            <p className="text-xs text-gray-500">2024.01.10</p>
+            <p className="text-xs text-gray-500">2025.01.10</p>
           </div>
         </div>
       </div>

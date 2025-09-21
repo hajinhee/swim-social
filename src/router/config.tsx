@@ -4,13 +4,19 @@ import { ROUTE_PATH } from "../constants/routes";
 
 const DashboardPage = lazy(() => import("../pages/dashboard/page"));
 const RecordsPage = lazy(() => import("../pages/records/page"));
+const RecordCreatePage = lazy(() => import("../pages/records/create/page"));
+const RecordDetailPage = lazy(() => import("../pages/records/detatil/page"));
 const SocialPage = lazy(() => import("../pages/social/page"));
+const FriendsPage = lazy(() => import("../pages/social/friends/page"));
 const RankingPage = lazy(() => import("../pages/ranking/page"));
+const GoalPage = lazy(() => import("../pages/records/goal/page"));
+const MyPage = lazy(() => import("../pages/mypage/page"));
+const LoginPage = lazy(() => import("../pages/auth/login/page"));
 const NotFoundPage = lazy(() => import("../pages/NotFound"));
 
 const routes: RouteObject[] = [
   {
-    path: ROUTE_PATH.DASHBOARD,
+    path: ROUTE_PATH.HOME,
     element: <DashboardPage />,
   },
   {
@@ -18,12 +24,36 @@ const routes: RouteObject[] = [
     element: <RecordsPage />,
   },
   {
+    path: ROUTE_PATH.RECORDS_CREATE,
+    element: <RecordCreatePage />,
+  },
+  {
+    path: ROUTE_PATH.RECORDS_DETAIL,
+    element: <RecordDetailPage />,
+  },
+  {
+    path: ROUTE_PATH.GOALS,
+    element: <GoalPage />,
+  },
+  {
     path: ROUTE_PATH.SOCIAL,
     element: <SocialPage />,
   },
   {
+    path: ROUTE_PATH.FRIENDS,
+    element: <FriendsPage />,
+  },
+  {
     path: ROUTE_PATH.RANKING,
     element: <RankingPage />,
+  },
+  {
+    path: ROUTE_PATH.MYPAGE,
+    element: <MyPage />,
+  },
+  {
+    path: ROUTE_PATH.LOGIN,
+    element: <LoginPage />,
   },
   {
     path: ROUTE_PATH.NOT_FOUND,
