@@ -53,6 +53,7 @@ export interface StatsGoal {
 }
 
 export interface Ranking {
+  id: number;
   rank: number;
   name: string;
   avatar: string;

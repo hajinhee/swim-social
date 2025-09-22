@@ -39,7 +39,7 @@ export default function SocialFeed() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-6">
       {feedPosts.map((post) => (
         <Card key={post.id} className="p-4 md:p-6">
           {/* 사용자 정보 */}

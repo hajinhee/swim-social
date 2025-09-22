@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
-import { ROUTE_PATH } from "../constants/routes";
+import SignupPage from "@/pages/auth/signup/page";
+import { ROUTE_PATH } from "@/constants/routes";
 
 const DashboardPage = lazy(() => import("../pages/dashboard/page"));
 const RecordsPage = lazy(() => import("../pages/records/page"));
@@ -11,7 +12,6 @@ const FriendsPage = lazy(() => import("../pages/social/friends/page"));
 const RankingPage = lazy(() => import("../pages/ranking/page"));
 const GoalPage = lazy(() => import("../pages/records/goal/page"));
 const MyPage = lazy(() => import("../pages/mypage/page"));
-const LoginPage = lazy(() => import("../pages/auth/login/page"));
 const NotFoundPage = lazy(() => import("../pages/NotFound"));
 
 const routes: RouteObject[] = [
@@ -52,8 +52,8 @@ const routes: RouteObject[] = [
     element: <MyPage />,
   },
   {
-    path: ROUTE_PATH.LOGIN,
-    element: <LoginPage />,
+    path: ROUTE_PATH.SIGNUP,
+    element: <SignupPage />,
   },
   {
     path: ROUTE_PATH.NOT_FOUND,

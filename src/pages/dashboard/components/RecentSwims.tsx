@@ -1,16 +1,16 @@
 import Card from "@/components/base/Card";
 import { recentSwims } from "@/data/recentSwims";
 
-const getDistanceIcon = (distance: string) => {
-  const km = parseFloat(distance);
-  if (km >= 3) {
-    return "ri-fish-line";
-  } else if (km >= 1) {
-    return "ri-waves-line";
-  } else {
-    return "ri-user-line";
-  }
-};
+// const getDistanceIcon = (distance: string) => {
+//   const km = parseFloat(distance);
+//   if (km >= 3) {
+//     return "ri-fish-line";
+//   } else if (km >= 1) {
+//     return "ri-waves-line";
+//   } else {
+//     return "ri-user-line";
+//   }
+// };
 
 const getTimeIcon = (time: string) => {
   const hour = parseInt(time.split(":")[0]);
@@ -66,15 +66,15 @@ export default function RecentSwims() {
     }
   };
   return (
-    <section className="mb-8">
-      <div className="flex items-center justify-between mb-6">
+    <section>
+      <div className="flex items-center justify-between mb-6 hidden md:block">
         <h2 className="text-2xl font-bold text-gray-900">최근 수영 기록</h2>
         <button className="text-blue-600 hover:text-blue-700 font-medium transition-colors cursor-pointer whitespace-nowrap">
           전체 보기 <i className="ri-arrow-right-line ml-1"></i>
         </button>
       </div>
 
-      <div className="grid gap-4 md:gap-3">
+      <div className="grid gap-2 md:gap-3">
         {recentSwims.map((swim, index) => (
           <Card
             key={swim.id}
@@ -82,20 +82,7 @@ export default function RecentSwims() {
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <div
-                  className={`w-12 h-12 bg-gradient-to-r ${swim.color} rounded-xl flex items-center justify-center`}
-                >
-                  <i
-                    className={`${getDistanceIcon(
-                      swim.distance
-                    )} text-white text-xl`}
-                  ></i>
-                </div>
-
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {swim.distance}
-                  </h3>
                   <p className="text-sm text-gray-600 flex items-center">
                     {swim.date} • {swim.time}
                     <i className={`${getTimeIcon(swim.time)} ml-2`}></i>
@@ -151,15 +138,12 @@ export default function RecentSwims() {
                 <p className="font-bold text-gray-900 text-sm flex items-center justify-center">
                   {swim.pace}
                   {calculatePaceChange(index)}
-                </p>{" "}
+                </p>
               </div>
             </div>
           </Card>
         ))}
-
-        <button className="text-blue-600 hover:text-blue-700 font-medium transition-colors cursor-pointer whitespace-nowrap mt-5">
-          더보기
-        </button>
+        {/* 무한 스크롤 적용하기 */}
       </div>
     </section>
   );

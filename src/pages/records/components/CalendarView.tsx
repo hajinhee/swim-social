@@ -24,16 +24,6 @@ export default function CalendarView() {
     calendarDays.push(date);
   }
 
-  // 수영 기록이 있는 날짜들 (더미 데이터)
-
-  // 영법별 색상
-  // const strokeColors = {
-  //   freestyle: "bg-blue-400",
-  //   backstroke: "bg-cyan-400",
-  //   breaststroke: "bg-green-400",
-  //   butterfly: "bg-purple-400",
-  // };
-
   const today = new Date();
   const isToday = (date: Date) => {
     return date.toDateString() === today.toDateString();
@@ -56,6 +46,44 @@ export default function CalendarView() {
   return (
     <section className="mb-8">
       <div className="grid lg:grid-cols-3 gap-6">
+        <div className="block md:hidden">
+          <Card className="p-4 md:p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold text-gray-900 ">
+                {showMonthlySummary ? "이달의 통계" : "뱃지 컬렉션"}
+              </h3>
+              <div className="flex bg-gray-100 rounded-lg p-1">
+                <button
+                  onClick={() => setShowMonthlySummary(true)}
+                  className={`
+              px-3 py-1 rounded-md font-medium text-sm transition-all cursor-pointer
+              ${
+                showMonthlySummary
+                  ? "bg-white text-blue-600 shadow-sm"
+                  : "text-gray-400 hover:text-gray-900"
+              }
+            `}
+                >
+                  통계
+                </button>
+                <button
+                  onClick={() => setShowMonthlySummary(false)}
+                  className={`
+              px-3 py-1 rounded-md font-medium text-sm transition-all cursor-pointer
+              ${
+                !showMonthlySummary
+                  ? "bg-white text-blue-600 shadow-sm"
+                  : "text-gray-400 hover:text-gray-900 "
+              }
+            `}
+                >
+                  뱃지
+                </button>
+              </div>
+            </div>
+            {showMonthlySummary ? <MonthlySummary /> : <BadgeCollection />}
+          </Card>
+        </div>
         {/* 달력 */}
         <div className="lg:col-span-2">
           <Card className="p-4 md:p-6">
@@ -141,20 +169,6 @@ export default function CalendarView() {
                     >
                       {date.getDate()}
                     </span>
-
-                    {/* 영법 점들 */}
-                    {/* {hasSwim && (
-                      <div className="absolute bottom-1 left-1 right-1 flex justify-center space-x-1">
-                        {hasSwim.map((stroke, i) => (
-                          <div
-                            key={i}
-                            className={`w-1.5 h-1.5 rounded-full ${
-                              strokeColors[stroke as keyof typeof strokeColors]
-                            }`}
-                          ></div>
-                        ))}
-                      </div>
-                    )} */}
                   </div>
                 );
               })}
@@ -175,7 +189,7 @@ export default function CalendarView() {
         </div>
 
         {/* 이달 통계, 뱃지 컬렉션 */}
-        <div>
+        <div className="hidden md:block">
           <Card className="p-4 md:p-6">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-bold text-gray-900">

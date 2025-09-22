@@ -29,7 +29,10 @@
       "@/lib/*": ["lib/*"],
       "@/types/*": ["types/*"],
       "@/pages/*": ["pages/*"],
-      "@/data/*": ["data/*"] 
+      "@/data/*": ["data/*"] ,      
+      "@/constants/*": ["constants/*"], 
+      "@/assets/*": ["assets/*"], 
+
     }
   },
   "include": ["src"]

@@ -3,9 +3,8 @@ import { weeklyStats } from "@/data/statsPeriod";
 
 export default function Stats() {
   return (
-    <section className="mb-8">
+    <section className="mb-8 hidden md:block">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">이번 주 통계</h2>
-
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {weeklyStats.map((stat, index) => (
           <Card key={index} className="p-4 md:p-6">

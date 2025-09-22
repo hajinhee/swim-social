@@ -1,5 +1,4 @@
 export const ROUTE_PATH = {
-  // 메인 페이지 및 대시보드
   HOME: "/",
 
   // 기록
@@ -20,6 +19,8 @@ export const ROUTE_PATH = {
   // 사용자 관련
   MYPAGE: "/mypage",
   LOGIN: "/login",
+  FORGOTPW: "/password",
+  SIGNUP: "/signup",
 
   // 에러
   NOT_FOUND: "*",

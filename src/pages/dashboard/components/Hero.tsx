@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="mb-8">
+      <section className="mb-8 hidden md:block">
         <div
           className="relative rounded-3xl overflow-hidden shadow-xl bg-cover bg-center bg-no-repeat min-h-[300px] md:min-h-[400px] flex items-center"
           style={{
@@ -27,10 +27,9 @@ export default function Hero() {
                 오늘도 멋진 수영을 준비하고 계시는군요!
                 <br />
                 친구들과 함께 건강한 경쟁을 즐겨보세요.
-                {/* 오늘도 멋진 수영을 준비하고 계시나요?<br />친구들과 함께 건강한 경쟁을 통해 더 나은 기록에 도전해보세요. */}
               </p>
-
               <div className="flex flex-col sm:flex-row gap-4">
+                {/* 로그인 후 버튼들 */}
                 <Button
                   variant="secondary"
                   size="lg"
@@ -38,15 +37,13 @@ export default function Hero() {
                 >
                   <i className="ri-add-line mr-2"></i>새 기록 추가
                 </Button>
-
                 <Button
                   onClick={handleReportDownload}
                   variant="secondary"
                   size="lg"
                   className="bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20"
                 >
-                  <i className="ri-download-line mr-2"></i>
-                  리포트 다운로드
+                  <i className="ri-download-line mr-2"></i>리포트 다운로드
                 </Button>
               </div>
             </div>
