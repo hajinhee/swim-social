@@ -94,7 +94,6 @@ export default function FriendsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-500 via-cyan-400 to-blue-600">
-      {/* Header */}
       <div className="px-6 pt-12 pb-6">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-2xl font-bold text-white">친구 관리</h1>

@@ -88,7 +88,6 @@ export default function MyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-blue-100 pb-20">
       <div className="container mx-auto px-4 py-6">
-        {/* Header */}
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800">마이페이지</h1>
         </div>
