@@ -1,5 +1,8 @@
+import Header from "@/components/base/Header";
+import MobileHeader from "@/components/base/MobileHeader";
 import Navigation from "@/components/feature/Navigation";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // 알림 데이터 예시
 const notifications = [
@@ -30,6 +33,8 @@ const notifications = [
 ];
 
 export default function FeedNotificationsPage() {
+  const navigate = useNavigate();
+
   const [unreadCount, setUnreadCount] = useState(notifications.length);
 
   // 알림을 읽음 처리하는 로직
@@ -39,11 +44,26 @@ export default function FeedNotificationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
+      {/* 공통 네비게이션 */}
       <Navigation />
+      {/* 모바일 헤더 (fixed) */}
+      <MobileHeader
+        title="알림"
+        leftButtons={
+          <button className="text-gray-500" onClick={() => navigate(-1)}>
+            <i className="ri-arrow-left-s-line text-xl"></i>
+          </button>
+        }
+      />
+      {/* 콘텐츠 영역 */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:px-8 lg:py-8">
+        {/* PC용 헤더 */}
+        <Header
+          title="알림"
+          description="친구의 메시지와 새로운 활동 알림을 모아볼 수 있어요."
+        />
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold">알림</h1>
           {unreadCount > 0 && (
             <button
               onClick={handleMarkAsRead}
@@ -53,7 +73,6 @@ export default function FeedNotificationsPage() {
             </button>
           )}
         </div>
-
         <div className="space-y-4">
           {notifications.map((notif) => (
             <div
@@ -75,7 +94,6 @@ export default function FeedNotificationsPage() {
             </div>
           ))}
         </div>
-
         {notifications.length === 0 && (
           <div className="text-center text-gray-500 py-10">
             새로운 알림이 없습니다.

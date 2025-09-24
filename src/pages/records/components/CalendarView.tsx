@@ -134,7 +134,7 @@ export default function CalendarView() {
                 return (
                   <div
                     key={index}
-                    className={`relative p-2 h-16 border border-gray-100 rounded-lg transition-all 
+                    className={`relative p-2 border border-gray-100 rounded-lg transition-all aspect-square
     ${
       !isCurrentMonthDate
         ? "text-gray-300 cursor-default"

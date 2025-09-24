@@ -13,7 +13,9 @@ export default function Card({
   hover = false,
   onClick,
 }: CardProps) {
-  const baseClasses = "bg-white rounded-2xl shadow-lg border border-blue-100";
+  // rounded-2xl bg-white shadow-xl border border-blue-100
+  const baseClasses =
+    "bg-white p-2 rounded-3xl shadow-lg ring-1 ring-gray-900/5";
   const hoverClasses = hover
     ? "hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"
     : "";

@@ -15,6 +15,7 @@ export default function RecordsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
+      {/* 공통 네비게이션 */}
       <Navigation />
 
       {/* 모바일 헤더 */}
@@ -39,7 +40,7 @@ export default function RecordsPage() {
         activeTab={activeTab}
         onTabChange={setActiveTab}
       />
-
+      {/* 콘텐츠 영역 */}
       <main className="pb-24 md:pb-8">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
           {/* PC용 헤더 */}
