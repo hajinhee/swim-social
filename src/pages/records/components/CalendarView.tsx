@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "@/components/base/Card";
 import BadgeCollection from "@/pages/records/components/BadgeCollection";
-import MonthlySummary from "./MonthlySummary";
+import SwimSummary from "./SwimSummary";
 
 export default function CalendarView() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -44,51 +44,13 @@ export default function CalendarView() {
   };
 
   return (
-    <section className="mb-8">
+    <section>
       <div className="grid lg:grid-cols-3 gap-6">
-        <div className="block md:hidden">
-          <Card className="p-4 md:p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-bold text-gray-900 ">
-                {showMonthlySummary ? "이달의 통계" : "뱃지 컬렉션"}
-              </h3>
-              <div className="flex bg-gray-100 rounded-lg p-1">
-                <button
-                  onClick={() => setShowMonthlySummary(true)}
-                  className={`
-              px-3 py-1 rounded-md font-medium text-sm transition-all cursor-pointer
-              ${
-                showMonthlySummary
-                  ? "bg-white text-blue-600 shadow-sm"
-                  : "text-gray-400 hover:text-gray-900"
-              }
-            `}
-                >
-                  통계
-                </button>
-                <button
-                  onClick={() => setShowMonthlySummary(false)}
-                  className={`
-              px-3 py-1 rounded-md font-medium text-sm transition-all cursor-pointer
-              ${
-                !showMonthlySummary
-                  ? "bg-white text-blue-600 shadow-sm"
-                  : "text-gray-400 hover:text-gray-900 "
-              }
-            `}
-                >
-                  뱃지
-                </button>
-              </div>
-            </div>
-            {showMonthlySummary ? <MonthlySummary /> : <BadgeCollection />}
-          </Card>
-        </div>
         {/* 달력 */}
         <div className="lg:col-span-2">
           <Card className="p-4 md:p-6">
             {/* 달력 헤더 */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-6 hidden md:flex">
               <h2 className="text-xl font-bold text-gray-900">
                 {currentDate.toLocaleDateString("ko-KR", {
                   year: "numeric",
@@ -107,6 +69,29 @@ export default function CalendarView() {
                   className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                 >
                   <i className="ri-arrow-right-line"></i>
+                </button>
+              </div>
+            </div>
+            {/* 달력 헤더 - 모바일 */}
+            <div className="flex items-center justify-between mb-6 md:hidden">
+              <div className="font-bold flex items-center space-x-2">
+                <button
+                  onClick={() => navigateMonth(-1)}
+                  className="p-1 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                >
+                  <i className="ri-arrow-left-s-fill"></i>
+                </button>
+                <span>
+                  {currentDate.toLocaleDateString("ko-KR", {
+                    year: "numeric",
+                    month: "long",
+                  })}
+                </span>
+                <button
+                  onClick={() => navigateMonth(1)}
+                  className="p-1 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                >
+                  <i className="ri-arrow-right-s-fill"></i>
                 </button>
               </div>
             </div>
@@ -224,7 +209,7 @@ export default function CalendarView() {
                 </button>
               </div>
             </div>
-            {showMonthlySummary ? <MonthlySummary /> : <BadgeCollection />}
+            {showMonthlySummary ? <SwimSummary /> : <BadgeCollection />}
           </Card>
         </div>
       </div>

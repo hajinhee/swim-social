@@ -2,6 +2,7 @@ import type { Ranking } from "@/types/records";
 
 export const weeklyRankings: Ranking[] = [
   {
+    id: 1,
     rank: 1,
     name: "박수영",
     avatar: "박",
@@ -10,6 +11,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "🏆",
   },
   {
+    id: 2,
     rank: 2,
     name: "김철수",
     avatar: "김",
@@ -18,6 +20,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "🥈",
   },
   {
+    id: 3,
     rank: 3,
     name: "이영희",
     avatar: "이",
@@ -26,6 +29,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "🥉",
   },
   {
+    id: 4,
     rank: 4,
     name: "정민수",
     avatar: "정",
@@ -34,6 +38,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 5,
     rank: 5,
     name: "최지훈",
     avatar: "최",
@@ -42,6 +47,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 6,
     rank: 6,
     name: "한미영",
     avatar: "한",
@@ -50,6 +56,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 7,
     rank: 7,
     name: "김수영",
     avatar: "김",
@@ -59,6 +66,7 @@ export const weeklyRankings: Ranking[] = [
     isMe: true,
   },
   {
+    id: 8,
     rank: 8,
     name: "송하늘",
     avatar: "송",
@@ -67,6 +75,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 9,
     rank: 9,
     name: "윤바다",
     avatar: "윤",
@@ -75,6 +84,7 @@ export const weeklyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 10,
     rank: 10,
     name: "오세아",
     avatar: "오",
@@ -86,6 +96,7 @@ export const weeklyRankings: Ranking[] = [
 
 export const monthlyRankings: Ranking[] = [
   {
+    id: 1,
     rank: 1,
     name: "김철수",
     avatar: "김",
@@ -94,6 +105,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "🏆",
   },
   {
+    id: 2,
     rank: 2,
     name: "박수영",
     avatar: "박",
@@ -102,6 +114,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "🥈",
   },
   {
+    id: 3,
     rank: 3,
     name: "이영희",
     avatar: "이",
@@ -110,6 +123,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "🥉",
   },
   {
+    id: 4,
     rank: 4,
     name: "정민수",
     avatar: "정",
@@ -118,6 +132,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 5,
     rank: 5,
     name: "한미영",
     avatar: "한",
@@ -126,6 +141,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 6,
     rank: 6,
     name: "최지훈",
     avatar: "최",
@@ -134,6 +150,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 7,
     rank: 7,
     name: "송하늘",
     avatar: "송",
@@ -142,6 +159,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 8,
     rank: 8,
     name: "김수영",
     avatar: "김",
@@ -151,6 +169,7 @@ export const monthlyRankings: Ranking[] = [
     isMe: true,
   },
   {
+    id: 9,
     rank: 9,
     name: "윤바다",
     avatar: "윤",
@@ -159,6 +178,7 @@ export const monthlyRankings: Ranking[] = [
     badge: "",
   },
   {
+    id: 10,
     rank: 10,
     name: "오세아",
     avatar: "오",

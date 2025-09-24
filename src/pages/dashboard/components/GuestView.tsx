@@ -9,7 +9,7 @@ export default function GuestView() {
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <main className="min-h-screen flex flex-col bg-gradient-to-br from-blue-600 to-cyan-500 text-white">
+      <main className="min-h-screen flex flex-col bg-gradient-to-b from-blue-600 to-cyan-500 text-white">
         {/* 상단 헤더 */}
         <header className="absolute top-0 left-0 right-0 p-6 z-10">
           <nav className="flex items-center justify-between">

@@ -9,8 +9,11 @@ export const ROUTE_PATH = {
   // 목표
   GOALS: "/goals",
 
-  // 소셜
-  SOCIAL: "/social",
+  // 피드
+  FEED: "/feed",
+  FEED_CREATE: "/feed/new",
+  FEED_SEARCH: "/feed/search",
+  FEED_NOTIFICATION: "/feed/notification",
   FRIENDS: "/friends",
 
   // 랭킹

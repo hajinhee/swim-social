@@ -1,4 +1,4 @@
-import type { Friends } from "@/types/social";
+import type { Friends } from "@/types/feed";
 
 export const friends: Friends[] = [
   {

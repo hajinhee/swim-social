@@ -26,7 +26,7 @@ export default function RecordDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600">
+    <div className="min-h-screen bg-gradient-to-b from-blue-500 via-cyan-400 to-blue-600">
       {/* Header */}
       <div className="px-6 pt-12 pb-6">
         <h1 className="text-2xl font-bold text-white text-center">

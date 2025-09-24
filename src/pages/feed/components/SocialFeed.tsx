@@ -23,21 +23,6 @@ export default function SocialFeed() {
     }
   };
 
-  const getStrokeIcon = (stroke: string) => {
-    switch (stroke) {
-      case "자유형":
-        return "ri-swimming-line";
-      case "배영":
-        return "ri-user-line";
-      case "평영":
-        return "ri-heart-pulse-line";
-      case "접영":
-        return "ri-bug-line";
-      default:
-        return "ri-swimming-line";
-    }
-  };
-
   return (
     <div className="space-y-3 md:space-y-6">
       {feedPosts.map((post) => (
@@ -57,37 +42,23 @@ export default function SocialFeed() {
           <p className="text-gray-900 mb-4">{post.content}</p>
 
           {/* 수영 데이터 카드 */}
-          {post.type === "swim" && post.swimData && (
+          {post.type === "record" && post.payload && (
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4 mb-4 border border-blue-100">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                  <i
-                    className={`${getStrokeIcon(
-                      post.swimData.stroke
-                    )} text-white text-sm`}
-                  ></i>
-                </div>
-                <span className="font-bold text-gray-900">
-                  {post.swimData.stroke}
-                </span>
-              </div>
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-sm text-gray-600">거리</p>
                   <p className="font-bold text-gray-900">
-                    {post.swimData.distance}
+                    {post.payload.distance}
                   </p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">시간</p>
-                  <p className="font-bold text-gray-900">
-                    {post.swimData.time}
-                  </p>
+                  <p className="font-bold text-gray-900">{post.payload.time}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">페이스</p>
                   <p className="font-bold text-gray-900 text-sm">
-                    {post.swimData.pace}
+                    {post.payload.pace}
                   </p>
                 </div>
               </div>
@@ -95,34 +66,45 @@ export default function SocialFeed() {
           )}
 
           {/* 업적 카드 */}
-          {post.type === "achievement" && post.achievement && (
+          {post.type === "badge" && post.payload && (
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 mb-4 border border-purple-100">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
                   <i className="ri-medal-line text-white text-sm"></i>
                 </div>
                 <span className="font-bold text-gray-900">
-                  새로운 업적: {post.achievement}
+                  새로운 업적: {post.content}
                 </span>
               </div>
             </div>
           )}
 
           {/* 도전 진행률 */}
-          {post.type === "challenge" && post.progress && (
+          {post.type === "goal" && post.payload && (
             <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-4 mb-4 border border-orange-100">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-medium text-gray-900">
                   주간 목표 진행률
                 </span>
                 <span className="text-sm font-bold text-orange-600">
-                  {post.progress}%
+                  {Math.round(
+                    (post.payload.currentDistance /
+                      post.payload.targetDistance) *
+                      100
+                  )}
+                  %
                 </span>
               </div>
               <div className="w-full bg-orange-200 rounded-full h-2">
                 <div
                   className="bg-gradient-to-r from-orange-500 to-red-500 h-2 rounded-full transition-all duration-1000"
-                  style={{ width: `${post.progress}%` }}
+                  style={{
+                    width: `${Math.round(
+                      (post.payload.currentDistance /
+                        post.payload.targetDistance) *
+                        100
+                    )}%`,
+                  }}
                 ></div>
               </div>
             </div>

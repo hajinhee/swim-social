@@ -1,17 +1,6 @@
 import Card from "@/components/base/Card";
 import { recentSwims } from "@/data/recentSwims";
 
-// const getDistanceIcon = (distance: string) => {
-//   const km = parseFloat(distance);
-//   if (km >= 3) {
-//     return "ri-fish-line";
-//   } else if (km >= 1) {
-//     return "ri-waves-line";
-//   } else {
-//     return "ri-user-line";
-//   }
-// };
-
 const getTimeIcon = (time: string) => {
   const hour = parseInt(time.split(":")[0]);
   if (hour >= 6 && hour < 12) {
@@ -30,8 +19,6 @@ const parsePace = (paceStr: string) => {
   const seconds = parseInt(parts[1].replace("초/100m", ""));
   return minutes * 60 + seconds;
 };
-
-// recentSwims API 호출 함수 만들기
 
 export default function RecentSwims() {
   const calculatePaceChange = (index: number) => {

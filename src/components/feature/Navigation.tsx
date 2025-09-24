@@ -5,7 +5,7 @@ export default function Navigation() {
   const location = useLocation();
 
   const navItems = [
-    { path: ROUTE_PATH.SOCIAL, label: "소셜", icon: "ri-team-line" },
+    { path: ROUTE_PATH.FEED, label: "피드", icon: "ri-team-line" },
     { path: ROUTE_PATH.RECORDS, label: "기록", icon: "ri-calendar-line" },
     { path: ROUTE_PATH.RANKING, label: "랭킹", icon: "ri-trophy-line" },
     { path: ROUTE_PATH.MYPAGE, label: "MY", icon: "ri-user-line" },
@@ -81,35 +81,8 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile Header */}
-      {/* <header className="md:hidden fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-blue-100 shadow-sm">
-        <div className="flex items-center justify-between px-4 py-3">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-              🏊‍♀️
-            </div>
-            <span
-              className="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent pr-2"
-              style={{ fontFamily: '"Pacifico", serif' }}
-            >
-              SwimSocial
-            </span>
-          </div>
-
-          <div className="flex items-center space-x-3">
-            <button className="p-2 text-gray-600 hover:text-blue-600 rounded-lg transition-colors cursor-pointer">
-              <i className="ri-notification-line text-lg"></i>
-            </button>
-            <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full flex items-center justify-center cursor-pointer">
-              <span className="text-white font-bold text-xs">김</span>
-            </div>
-          </div>
-        </div>
-      </header> */}
-
       {/* Spacer for fixed navigation */}
       <div className="hidden md:block h-20"></div>
-      <div className="md:hidden h-2"></div>
     </>
   );
 }
