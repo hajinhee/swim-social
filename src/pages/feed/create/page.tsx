@@ -13,7 +13,7 @@ export default function FeedCreatePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
       {/* 공통 네비게이션 */}
-      <Navigation />
+      <Navigation hideOnMobile={true} />
 
       {/* 모바일 헤더 (fixed) */}
       <MobileHeader

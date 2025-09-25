@@ -1,3 +1,4 @@
+import Card from "@/components/base/Card";
 import { useState } from "react";
 
 // 선택한 기간에 맞는 텍스트 포맷
@@ -164,8 +165,8 @@ export default function SwimSummary() {
   return (
     <>
       {/* 기간 설정 셀렉트 박스 */}
-      <div className="flex items-center justify-between mb-2 block md:hidden">
-        <div className="font-bold flex items-center space-x-2">
+      <div className="flex items-center justify-between mb-3 block md:hidden">
+        <div className="font-bold flex items-center space-x-2 text-lg">
           <button
             disabled={selectedTimeframe === "all"}
             className={`p-1 ${
@@ -197,7 +198,7 @@ export default function SwimSummary() {
           <select
             value={selectedTimeframe}
             onChange={handleTimeframeChange}
-            className="block px-4 py-2 pr-8 text-xs font-medium text-gray-700 bg-white border border-gray-300 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer"
+            className="block px-4 py-2 pr-8 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer"
           >
             {options.map((option) => (
               <option key={option.value} value={option.value}>
@@ -210,60 +211,61 @@ export default function SwimSummary() {
           </div>
         </div>
       </div>
-
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="text-gray-600">총 수영 횟수</span>
-          <span className="font-bold text-gray-900">{stats.totalSwims}회</span>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-gray-600">총 거리</span>
-          <span className="font-bold text-gray-900">{stats.totalDistance}</span>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-gray-600">총 시간</span>
-          <span className="font-bold text-gray-900">{stats.totalTime}</span>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-gray-600">평균 페이스</span>
-          <span className="font-bold text-gray-900">{stats.avgPace}</span>
-        </div>
-      </div>
-
-      <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center">
-            <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
-              {selectedTimeframe === "daily"
-                ? "일간 목표"
-                : selectedTimeframe === "weekly"
-                ? "주간 목표"
-                : selectedTimeframe === "monthly"
-                ? "월간 목표"
-                : selectedTimeframe === "yearly"
-                ? "연간 목표"
-                : "전체 목표"}
+      <Card className="mb-4 p-6 md:p-6">
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">총 수영 횟수</span>
+            <span className="font-bold text-gray-900">
+              {stats.totalSwims}회
             </span>
-            <button className="p-1 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
-              <i className="ri-settings-4-line text-md"></i>
-            </button>
           </div>
-          <span className="text-sm text-blue-600 font-medium dark:text-blue-400">
-            {progressPercent}%
-          </span>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">총 거리</span>
+            <span className="font-bold text-gray-900">
+              {stats.totalDistance}
+            </span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-gray-600">총 시간</span>
+            <span className="font-bold text-gray-900">{stats.totalTime}</span>
+          </div>
         </div>
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-          <div
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
-            style={{ width: `${progressPercent}%` }}
-          ></div>
+
+        <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center">
+              <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                {selectedTimeframe === "daily"
+                  ? "일간 목표"
+                  : selectedTimeframe === "weekly"
+                  ? "주간 목표"
+                  : selectedTimeframe === "monthly"
+                  ? "월간 목표"
+                  : selectedTimeframe === "yearly"
+                  ? "연간 목표"
+                  : "전체 목표"}
+              </span>
+              <button className="p-1 text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                <i className="ri-settings-4-line text-md"></i>
+              </button>
+            </div>
+            <span className="text-sm text-blue-600 font-medium dark:text-blue-400">
+              {progressPercent}%
+            </span>
+          </div>
+          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+            <div
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full"
+              style={{ width: `${progressPercent}%` }}
+            ></div>
+          </div>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+            목표: {stats.goal.targetDistance}km (현재:{" "}
+            {stats.goal.currentDistance}
+            km)
+          </p>
         </div>
-        <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
-          목표: {stats.goal.targetDistance}km (현재:{" "}
-          {stats.goal.currentDistance}
-          km)
-        </p>
-      </div>
+      </Card>
     </>
   );
 }

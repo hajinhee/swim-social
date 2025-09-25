@@ -13,7 +13,7 @@ export default function Card({
   hover = false,
   onClick,
 }: CardProps) {
-  // rounded-2xl bg-white shadow-xl border border-blue-100
+  // rounded-2xl bg-white shadow-xl  border border-blue-100
   const baseClasses =
     "bg-white p-2 rounded-3xl shadow-lg ring-1 ring-gray-900/5";
   const hoverClasses = hover

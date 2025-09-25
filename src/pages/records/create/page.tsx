@@ -3,20 +3,22 @@ import MobileHeader from "@/components/base/MobileHeader";
 import Navigation from "@/components/feature/Navigation";
 import PoolSearchModalExample from "@/components/feature/PoolSearchModal";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import RecordForm from "./components/RecordForm";
 
 export default function RecordCreatePage() {
+  const { date } = useParams();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
+    // <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white ">
+    <div className="min-h-screen bg-white">
       {/* 공통 네비게이션 */}
-      <Navigation />
+      <Navigation hideOnMobile={true} />
       {/* 모바일 헤더 (fixed) */}
       <MobileHeader
-        title="기록 추가"
+        title={date || "기록 추가"}
         leftButtons={
           <button className="text-gray-500" onClick={() => navigate(-1)}>
             <i className="ri-arrow-left-s-line text-xl"></i>
@@ -37,15 +39,10 @@ export default function RecordCreatePage() {
         />
       </main>
       {/* 수영장 검색 모달 */}
-      <PoolSearchModalExample isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <p>여기에 모달 안 내용이 들어갑니다.</p>
-        <button
-          onClick={() => setIsOpen(false)}
-          className="mt-4 px-4 py-2 bg-gray-200 rounded-lg"
-        >
-          닫기
-        </button>
-      </PoolSearchModalExample>
+      <PoolSearchModalExample
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      ></PoolSearchModalExample>
       ;
     </div>
   );

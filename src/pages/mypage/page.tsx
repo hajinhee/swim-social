@@ -1,5 +1,4 @@
 import Navigation from "../../components/feature/Navigation";
-import { Link } from "react-router-dom";
 import MobileHeader from "@/components/base/MobileHeader";
 import Header from "@/components/base/Header";
 import { SettingsMenu } from "./components/SettingsMenu";
@@ -20,7 +19,7 @@ export default function MyPage() {
       icon: "ri-notification-line",
       path: "/notifications",
     },
-    { title: "데이터 백업", icon: "ri-cloud-line", path: "/backup" },
+    // { title: "데이터 백업", icon: "ri-cloud-line", path: "/backup" },
     { title: "도움말", icon: "ri-question-line", path: "/help" },
     { title: "로그아웃", icon: "ri-logout-box-line", path: "/login" },
   ];
@@ -28,19 +27,10 @@ export default function MyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
       {/* 공통 네비게이션 */}
-      <Navigation />
+      <Navigation hideOnMobile={false} />
 
       {/* 모바일 헤더 (fixed) */}
-      <MobileHeader
-        title="마이페이지"
-        rightButtons={
-          <Link to="">
-            <button className="text-gray-500 hover:text-gray-900 transition-colors">
-              <i className="ri-more-2-fill text-xl"></i>
-            </button>
-          </Link>
-        }
-      />
+      <MobileHeader title="마이페이지" />
 
       {/* 콘텐츠 영역 */}
       <main className="pb-24 md:pb-8">
@@ -57,8 +47,6 @@ export default function MyPage() {
           <SettingsMenu menuItems={menuItems} />
         </div>
       </main>
-
-      <Navigation />
     </div>
   );
 }

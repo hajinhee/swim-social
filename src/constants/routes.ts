@@ -3,7 +3,7 @@ export const ROUTE_PATH = {
 
   // 기록
   RECORDS: "/records",
-  RECORDS_CREATE: "/records/new",
+  RECORDS_CREATE: "/records/new/:date",
   RECORDS_DETAIL: "/records/:id", // 기록 상세 또는 수정
 
   // 목표

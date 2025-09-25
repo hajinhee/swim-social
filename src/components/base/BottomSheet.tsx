@@ -27,7 +27,7 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
         leaveFrom="translate-y-0"
         leaveTo="translate-y-full"
       >
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-2xl shadow-lg p-4 max-h-[80%] overflow-y-auto">
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-2xl shadow-lg p-4 h-[80%] overflow-y-auto">
           <div className="flex items-center justify-between mb-4">
             <button onClick={onClose} className="text-gray-500 text-xl">
               &times;

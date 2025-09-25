@@ -6,7 +6,7 @@ import { ROUTE_PATH } from "@/constants/routes";
 const DashboardPage = lazy(() => import("../pages/dashboard/page"));
 const RecordsPage = lazy(() => import("../pages/records/page"));
 const RecordCreatePage = lazy(() => import("../pages/records/create/page"));
-const RecordDetailPage = lazy(() => import("../pages/records/detatil/page"));
+// const RecordDetailPage = lazy(() => import("../pages/records/detatil/page"));
 const FeedPage = lazy(() => import("../pages/feed/page"));
 const FeedCreatePage = lazy(() => import("../pages/feed/create/page"));
 const FeedSearchPage = lazy(() => import("../pages/feed/search/page"));
@@ -34,10 +34,10 @@ const routes: RouteObject[] = [
     path: ROUTE_PATH.RECORDS_CREATE,
     element: <RecordCreatePage />,
   },
-  {
-    path: ROUTE_PATH.RECORDS_DETAIL,
-    element: <RecordDetailPage />,
-  },
+  // {
+  //   path: ROUTE_PATH.RECORDS_DETAIL,
+  //   element: <RecordDetailPage />,
+  // },
   {
     path: ROUTE_PATH.GOALS,
     element: <GoalPage />,

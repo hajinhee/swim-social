@@ -47,7 +47,7 @@ export default function MobileHeader({
         }}
       >
         {/* 상단: 좌측 버튼 + 제목 + 우측 버튼 */}
-        <div className="relative flex justify-center items-center">
+        <div className="relative flex justify-center items-center ">
           <div className="absolute left-0 flex space-x-1">{leftButtons}</div>
           <h2 className="font-semibold">{title}</h2>
           <div className="absolute right-0 flex space-x-1">{rightButtons}</div>
@@ -60,7 +60,7 @@ export default function MobileHeader({
               showTabs ? "h-10 opacity-100" : "h-0 opacity-0"
             }`}
           >
-            <div className="flex justify-around items-center text-gray-500 px-4 mt-1">
+            <div className="flex justify-around items-center text-gray-500 mt-1">
               {tabs.map((tab) => (
                 <button
                   key={tab.key}

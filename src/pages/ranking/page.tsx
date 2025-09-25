@@ -18,14 +18,14 @@ export default function RankingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
       {/* 공통 네비게이션 */}
-      <Navigation />
+      <Navigation hideOnMobile={false} />
 
       {/* 모바일 헤더 */}
       <MobileHeader
         title="랭킹"
         rightButtons={
           <button className="text-gray-500">
-            <i className="ri-more-2-fill text-xl" />
+            <i className="ri-filter-3-line text-xl"></i>
           </button>
         }
         tabs={[

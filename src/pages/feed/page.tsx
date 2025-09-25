@@ -9,7 +9,7 @@ export default function FeedPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 via-white to-white">
       {/* 공통 네비게이션 */}
-      <Navigation />
+      <Navigation hideOnMobile={false} />
 
       {/* 모바일 헤더 (fixed) */}
       <MobileHeader
@@ -45,19 +45,21 @@ export default function FeedPage() {
       />
 
       {/* 콘텐츠 영역 */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:px-8 lg:py-8">
-        {/* PC용 헤더 */}
-        <Header
-          title="소셜 피드"
-          description="친구들과 함께 수영을 즐기고 서로 응원해보세요"
-        />
-        {/* 페이지 콘텐츠 */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <SocialFeed />
-          </div>
-          <div className="space-y-6">
-            <FriendsPanel />
+      <main className="pb-24 md:pb-8">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+          {/* PC용 헤더 */}
+          <Header
+            title="소셜 피드"
+            description="친구들과 함께 수영을 즐기고 서로 응원해보세요"
+          />
+          {/* 페이지 콘텐츠 */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <SocialFeed />
+            </div>
+            <div className="space-y-6 hidden md:block">
+              <FriendsPanel />
+            </div>
           </div>
         </div>
       </main>

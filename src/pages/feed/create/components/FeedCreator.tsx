@@ -10,6 +10,7 @@ import pool1 from "@/assets/images/pool-1.png";
 import pool2 from "@/assets/images/pool-2.png";
 import pool3 from "@/assets/images/pool-3.png";
 import pool4 from "@/assets/images/pool-4.png";
+import Button from "@/components/base/Button";
 
 // 시뮬레이션 API
 const createPost = async (postData: FeedPosts) => {
@@ -150,7 +151,7 @@ export const FeedCreator = ({ postType, setPostType }: FeedCreatorProps) => {
   }, [postType]);
 
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col space-y-4 mb-15 md:mb-0">
       {/* 미리보기 영역 */}
       <div
         className={`w-full aspect-[2/1] rounded-xl relative overflow-hidden flex items-center justify-center transition-all duration-300 ${
@@ -323,9 +324,9 @@ export const FeedCreator = ({ postType, setPostType }: FeedCreatorProps) => {
           </div>
           {/* 텍스트 색상 선택 */}
           <div className="pt-4">
-            <p className="text-gray-400 mb-2 text-xs">텍스트</p>
+            <p className="text-gray-400 mb-2 text-sm">텍스트</p>
             <div className="flex items-center justify-between">
-              <p className="font-semibold text-sm">색상</p>
+              <p className="text-sm">색상</p>
               <div className="space-x-2">
                 {["white", "black"].map((color) => (
                   <button
@@ -346,8 +347,8 @@ export const FeedCreator = ({ postType, setPostType }: FeedCreatorProps) => {
           </div>
           {/* 데이터 표시 스위치 */}
           <div className="pt-4">
-            <p className="text-gray-400 mb-2 text-xs">상세 설정</p>
-            <div className="space-y-4 font-semibold text-sm">
+            <p className="text-gray-400 mb-2 text-sm">상세 설정</p>
+            <div className="space-y-4 ">
               <div className="flex items-center justify-between ">
                 <span>거리</span>
                 <label className="relative inline-flex items-center cursor-pointer">
@@ -402,18 +403,18 @@ export const FeedCreator = ({ postType, setPostType }: FeedCreatorProps) => {
       )}
 
       {/* 게시 버튼 및 공유 옵션 */}
-      <div className="pt-4 flex justify-between items-center">
-        <button
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white  shadow-lg">
+        <Button
           onClick={handleSubmit}
           disabled={isSubmitDisabled}
-          className={`px-4 py-2 font-semibold rounded-full transition-all duration-200 flex-1 ${
+          className={`px-4 py-2 font-semibold rounded-lg transition-all duration-200 w-full ${
             isSubmitDisabled
               ? "bg-gray-200 text-gray-500 cursor-not-allowed"
               : "bg-blue-600 text-white hover:bg-blue-700"
           }`}
         >
           게시하기
-        </button>
+        </Button>
       </div>
     </div>
   );

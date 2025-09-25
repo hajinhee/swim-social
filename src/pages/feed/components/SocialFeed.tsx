@@ -156,7 +156,7 @@ export default function SocialFeed() {
               <div className="flex-1 flex items-center space-x-2">
                 <input
                   type="text"
-                  placeholder="댓글을 입력하세요..."
+                  placeholder="댓글을 입력하세요."
                   value={comments[post.id] || ""}
                   onChange={(e) =>
                     setComments((prev) => ({
